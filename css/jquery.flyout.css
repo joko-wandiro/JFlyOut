@@ -1,0 +1,7 @@
+.icon { display: inline-block; width: 36px; height: 60px; }
+.content-box { float: none; min-height: 300px; background: #eee; }
+.flyout { position: fixed; width: 300px; }
+#facebook_icon { background: url('../images/facebook.png') no-repeat center center; }
+#custom_box { background: url('../images/custom_box.png') no-repeat center center; }
+#facebook-content { border: 4px solid #3B5998; }
+#custom_box-content { border: 4px solid #EE3963 }
