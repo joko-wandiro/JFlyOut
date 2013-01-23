@@ -52,7 +52,7 @@ $.fn.JFlyOut= function(options){
 	iconWidth= $('.icon').first().outerWidth();
 	iconHeight= $('.icon').first().outerHeight();
 	
-	// Set Top Position for each Menu
+	// Initial Method for Flyout Menu
 	this.attr({ 'data-position': settings.position }); // Adding Attribute Position	
 	$menus= $('.flyout', this);
 	$menus.each( function(i){
@@ -62,31 +62,34 @@ $.fn.JFlyOut= function(options){
 			getTop= settings.startTop;
 		}else{
 			getTop= parseInt(settings.startTop) + ( (parseInt(settings.margin) + iconHeight) * i );
-		}		
-		// Set Style for FlyOut
+		}
 		position= JFlyOut.getPosition($elem);
 		getRight= elemWidth - iconWidth + 1;
 		content_margin= iconWidth-2;
 		$content_box= $elem.find('.content-box');
 		content_boxHeight= $content_box.outerHeight();
 		$icon= $elem.find('.icon');
-		console.log(position);
-		// Simplify This Code
-		if( position == "left" ){
-			$elem.css({ 'top': getTop + 'px', 'left': -getRight + 'px' });
-			$icon.css({ 'float': 'right' });
-			$content_box.css({ 'margin-right': content_margin + 'px' });
-		}else if( position == "right" ){
-			$elem.css({ 'top': getTop + 'px', 'right': -getRight + 'px' });
-			$icon.css({ 'float': 'left' });
-			$content_box.css({ 'margin-left': content_margin + 'px' });
-		}else if( position == "top" ){
-			$elem.css({ 'left': getTop + 'px', 'top': -content_boxHeight + 'px' });
-			$elem.append($icon);
-		}else if( position == "bottom" ){
-			$elem.css({ 'left': getTop + 'px', 'bottom': -content_boxHeight + 'px' });
+		// Set Initial Style Based position Attribute
+		attr= new Object;
+		if( position == "top" || position == "bottom" ){
+			set_position= -content_boxHeight + 'px';
+			attr.left= getTop + 'px';
+			if( position == "top" ){ $elem.append($icon); }			
+		}else{
+			icon_attr= new Object;
+			pos_margin= ( position == "left" ) ? 'right' : 'left';
+			icon_attr['float']= pos_margin;
+			$icon.css(icon_attr);
+			content_box_attr= new Object;
+			content_box_attr_margin= "margin-"+pos_margin;
+			content_box_attr[content_box_attr_margin]= content_margin + 'px';			
+			$content_box.css(content_box_attr);
+			set_position= -getRight + 'px';
+			attr.top= getTop + 'px';
 		}
-		// Simplify This Code
+		attr[position]= set_position;
+		$elem.css(attr);
+/*		console.log(attr);*/
 	});
 		
 	$('.icon', $menus).mouseenter( function(){
