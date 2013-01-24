@@ -1,5 +1,6 @@
 /*
 JFlyOut ( Jquery FlyOut Menu ) by Joko Wandiro
+Version: 1.0.0
 License: http://creativecommons.org/licenses/by-nc-sa/3.0/
 Free for Private and Commercial Project
 */
@@ -7,7 +8,6 @@ Free for Private and Commercial Project
 $.fn.JFlyOut= function(options){
 	JFlyOut= {
 		'click': function($obj){
-/*			console.log("Event Click");*/
 			$('.icon', $obj).live('click', function(){
 				$elem= $(this);
 				$elemParent= $(this).parent();
@@ -19,13 +19,10 @@ $.fn.JFlyOut= function(options){
 			})
 		},	
 		'hover': function($obj){
-/*			console.log("Event Hover");*/
 			$('.icon', $obj).mouseenter( function(){
-/*				console.log("Event mouseenter");*/
 				JFlyOut.openIt($(this));
 			});
 			$obj.mouseleave( function(){
-/*				console.log("Event mouseleave");*/
 				JFlyOut.closeIt($(this));
 			});
 		},
@@ -134,15 +131,12 @@ $.fn.JFlyOut= function(options){
 			content_box_attr_margin= "margin-"+pos_margin;
 			content_box_attr[content_box_attr_margin]= iconWidth + 'px';
 			$content_box.css(content_box_attr);
-/*			set_position= -elemWidth + 'px';*/
 			set_position= -elemWidth + 'px';
 			attr.top= getTop + 'px';
 		}
 		$icon.css(icon_attr);
 		attr[position]= set_position;
-/*		console.log(attr);*/
 		$elem.css(attr).attr({ 'data-prev-position': set_position });
-/*		console.log(attr);*/
 	});
 	
 	// Trigger Event	
