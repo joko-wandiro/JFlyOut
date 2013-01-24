@@ -11,89 +11,78 @@ $(document).ready( function(){
 	
 	var settings= {
 		'startTop': '500',		
-		'margin': '10',
-		'position': 'top'
+		'margin': '20',
+		'position': 'top',
+		'event': 'click'
 	}
 	$('#flyout-first').JFlyOut(settings);
 	
 	var settings= {
 		'startTop': '500',
-		'margin': '10',
-		'position': 'bottom'
+		'margin': '20',
+		'position': 'bottom',
+		'event': 'hover'
 	}
 	$('#flyout-second').JFlyOut(settings);
 	
 	var settings= {
 		'startTop': '100',
 		'margin': '10',
-		'position': 'right'
+		'position': 'left',
+		'event': 'hover'
 	}
 	$('#flyout-third').JFlyOut(settings);
 	
 	var settings= {
-		'startTop': '100',
+		'startTop': '260',
 		'margin': '10',
-		'position': 'left'
+		'position': 'right',
+		'event': 'click'
 	}
 	$('#flyout-fourth').JFlyOut(settings);
 });
 </script>
-<style>
-/*.icon { display: inline-block; width: 36px; height: 60px; float: left; }
-.content-box { float: none; min-height: 300px; background: #eee; }
-.sidebar { position: fixed; width: 300px; }
-#facebook_icon { background: url('images/facebook.png') no-repeat center center; }
-#custom_box { background: url('images/custom_box.png') no-repeat center center; }
-#facebook-content { border: 4px solid #3B5998; }
-#custom_box-content { border: 4px solid #EE3963 }*/
-</style>
 </head>
 <body>
 <div id="flyout-first">
 	<div class="flyout">
-		<div id="facebook_icon" class="icon">&nbsp;</div>
-		<div id="facebook-content" class="content-box">Facebook Fan Page</div>
+		<div class="icon"><span class="facebook">Click Me</span></div>
+		<div id="facebook-content" class="content-box">Contents</div>
 	</div>
 	<div class="flyout">
-		<div id="custom_box" class="icon">&nbsp;</div>
-		<div id="custom_box-content" class="content-box">Facebook Fan Page</div>
+		<div class="icon"><span class="custom">Click Me</span></div>
+		<div id="custom_box-content" class="content-box">Contents</div>
 	</div>	
 </div>
 <div id="flyout-second">
 	<div class="flyout">
-		<div id="facebook_icon" class="icon">&nbsp;</div>
-		<div id="facebook-content" class="content-box">Facebook Fan Page</div>
+		<div class="icon"><span class="facebook">Hover Me</span></div>
+		<div id="facebook-content" class="content-box">Contents</div>
 	</div>
 	<div class="flyout">
-		<div id="custom_box" class="icon">&nbsp;</div>
-		<div id="custom_box-content" class="content-box">
-		Custom Box
-		</div>
-	</div>
+		<div class="icon"><span class="custom">Hover Me</span></div>
+		<div id="custom_box-content" class="content-box">Contents</div>
+	</div>	
 </div>
 <div id="flyout-third">
 	<div class="flyout">
-		<div id="facebook_icon" class="icon">&nbsp;</div>
-		<div id="facebook-content" class="content-box">Facebook Fan Page</div>
+		<div class="icon"><span class="facebook">Hover Me</span></div>
+		<div id="facebook-content" class="content-box">Contents</div>
 	</div>
 	<div class="flyout">
-		<div id="custom_box" class="icon">&nbsp;</div>
-		<div id="custom_box-content" class="content-box">
-		Custom Box
-		</div>
-	</div>
+		<div class="icon"><span class="custom">Hover Me</span></div>
+		<div id="custom_box-content" class="content-box">Contents</div>
+	</div>	
 </div>
 <div id="flyout-fourth">
 	<div class="flyout">
-		<div id="facebook_icon" class="icon">&nbsp;</div>
-		<div id="facebook-content" class="content-box">Facebook Fan Page</div>
+		<div class="icon"><span class="facebook">Click Me</span></div>
+		<div id="facebook-content" class="content-box">Contents</div>
 	</div>
 	<div class="flyout">
-		<div id="custom_box" class="icon">&nbsp;</div>
-		<div id="custom_box-content" class="content-box">
-		Custom Box
-		</div>
-	</div>
+		<div class="icon"><span class="custom">Click Me</span></div>
+		<div id="custom_box-content" class="content-box">Contents</div>
+	</div>	
 </div>
 </body>
 </html>
